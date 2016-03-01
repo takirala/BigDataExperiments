@@ -60,6 +60,7 @@ object PagerankSpark {
     output1.take(topC).foreach(tup => {
       write(tup._1 + " has rank: " + tup._2, path)
     })
+    write("Total time taken => " + (System.currentTimeMillis() - t1 ), path)
   }
 
   def write(r: String, path: String) = {
